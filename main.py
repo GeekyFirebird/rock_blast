@@ -9,6 +9,11 @@ def main():
 
     pygame.init()
 
+    # Restrict our game to draw a maximum of 60 times per second, or 60 FPS
+    clock = pygame.time.Clock()
+    dt = 0.0
+
+
     while True:
         screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)) # Sets the screen size
         log_state() # 
@@ -17,6 +22,9 @@ def main():
                 return
         screen.fill("black")
         pygame.display.flip() #Refresh the screen
+        dt = clock.tick(60) / 1000 # limit the framerate to 60 FPS
+
+        # Restrict our game to draw a maximum of 60 times per second, or 60 FPS
 
 
 
