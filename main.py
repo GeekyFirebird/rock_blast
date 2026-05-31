@@ -23,6 +23,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT: # Makes the windows close button work. 
                 return
+        player.update(dt)
         screen.fill("black")
         player.draw(screen)
         pygame.display.flip() #Refresh the screen
